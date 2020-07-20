@@ -1,1 +1,53 @@
-sdsfsd
+button {
+    border: none;
+    color: darkgrey;
+    text-align: center;
+    font-size 32px;
+    cursor: pointer;
+    background: white;
+}
+button.move{
+    position: absolute;
+    top: 0px;
+    left 0px;
+}
+button.title{
+    position: absolute;
+    font-size: 36px;
+}
+
+.btn-group button {
+    position:relative;
+    top: 40px;
+    left:35%;
+    display:block;
+    padding-left: 70px;
+    padding-right: 70px;
+    background-color: white;
+    color: dimgrey;
+    cursor: pointer;
+    float: left;
+    outline:none;
+}
+.btn-group button:hover{
+    color:darkgrey;
+}
+div.name {
+    font-size: 16px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin: 20px 20px 20px 20px;
+}
+
+.text-block {
+    position: absolute;
+    background-color: white;
+    color: dimgray;
+    font-size: 20px;
+    top: 170px;
+    left 800px;
+    margin-right: 400px;
+    margin-left: 700px;
+    
+}
