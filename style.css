@@ -1,1 +1,92 @@
-sdsfsd
+@font-face{
+    font-family: f;
+    src:url(GeosansLight.ttf);
+}
+*{
+    font-family: f;
+    color: ghostwhite;
+}
+html{
+    background-color: black;
+}
+.contact{
+    position: relative;
+    text-align: center;
+    background-color: transparent;
+    margin-left: 40%;
+    margin-right: 40%;
+    top: 140px;
+}
+button {
+    border: none;
+    color: darkgrey;
+    background-color: transparent;
+    text-align: center;
+    font-size 32px;
+    cursor: pointer;
+}
+button.move{
+    position: absolute;
+    top: 0px;
+    left 0px;
+}
+button.title{
+    position: absolute;
+    top: 150px;
+    left: 12.5%;
+    font-size: 60px;
+    outline: none;
+    z-index: 1000;
+}
+
+.btn-group button {
+    position:relative;
+    top: 230px;
+    left:14%;
+    display:block;
+    background-color: transparent;
+    padding: 10px;
+    cursor: pointer;
+    display:block;
+    outline:none;
+}
+.btn-group button:hover{
+    color:darkgrey;
+}
+div.name {
+    font-size: 16px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin: 20px 20px 20px 20px;
+}
+
+.text-block {
+    position: absolute;
+    color: ghostwhite;
+    font-size: 20px;
+    top: 230px;
+    right: 200px;
+    margin-right:90px;
+    margin-left: 900px;
+    
+}
+.title img{
+    position:absolute;
+    top:230px;
+    left: 600px;
+}
+
+.main img{
+    position: absolute;
+    top: 170px;
+    left: 300px;
+}
+
+#bgvid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    max-height: 100%;
+}
