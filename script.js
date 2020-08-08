@@ -8,40 +8,49 @@ function performAllExcept(funArr, num, excep, excepFun)
     }
     excepFun();
 }
+function animateDown(arrStr, num){
+    var i = 0;
+    for (i=0; i<num; i++){
+        $(arrStr[i]).animate({top:'+=70px'});
+    }
+}
+function animateUp(arrStr, num){
+    var i = 0;
+    for (i=0; i<num; i++){
+        $(arrStr[i]).animate({top:'-=100px'});
+    }
+}
+
+function mouseHoverEff(){
+    
+}
+
 $(document).ready(function(){
-    var funArrFade = [function(){$("#bio").fadeOut();}, function(){$("#art").fadeOut();}, 
-    function(){$("#exh").fadeOut();}, function(){$("#con").fadeOut();}, function(){$("#bgvid").fadeOut();}];
     $("[type = contents]").hide();
-    var pg = -1;
-    $("#bbut").click(function(){
-        if (pg != 0){
-            performAllExcept(funArrFade, 5, 0, function(){$("#bio").fadeIn();});
-            pg = 0;
-        }
-        
-    });
-    $("#abut").click(function(){
-        if (pg !== 1) {
-            performAllExcept(funArrFade, 5, 1, function(){$("#art").fadeIn();});
-            pg = 1;
-        }
-    });
-    $("#ebut").click(function(){
-        if (pg !== 2) {
-            performAllExcept(funArrFade, 5, 2, function(){$("#exh").fadeIn();});
-            pg = 2;
-        }
+    $("#bio-pic").css("visibility", "visible");
+    setTimeout(function(){$("[type = contents]").fadeIn();}, 250);
+    $("#home").click(function(){
+        $("[type = contents]").fadeOut();
+        setTimeout(function(){location.href = "index.html";}, 500);
     });
     $("#cbut").click(function(){
-        if (pg !== 3) {
-            performAllExcept(funArrFade, 5, 3, function(){$("#con").fadeIn();});
-            pg = 3;
-        }
+        $("[type = contents]").fadeOut();
+        $("#cbut").css("color", "dimgray");
+        setTimeout(function(){location.href = "contact.html";}, 500);
+    });
+    $("#bbut").click(function(){
+        $("[type = contents]").fadeOut();
+        $("#bbut").css("color", "dimgray");
+        setTimeout(function(){location.href = "bio.html";}, 500);
+    });
+    $("#abut").click(function(){
+        $("[type = contents]").fadeOut();
+        setTimeout(function(){location.href = "art.html";}, 500);
+        $("#abut").css("color", "dimgray");
+        animateDown(["#cbut", "#ebut"], 2);
     });
     $("#tbut").click(function(){
-        if (pg !== 4){
-            performAllExcept(funArrFade, 5, 4, function(){$("#bgvid").fadeIn();});
-            pg = 4;
-        }
+        $("[type = contents]").fadeOut();
+        setTimeout(function(){location.href = "index.html";}, 500);
     });
 });

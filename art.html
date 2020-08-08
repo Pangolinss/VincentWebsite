@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src = "script.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#pop").fadeOut();
+        $("#0").click(function(){
+            $("#pop-im").attr("src", "Pictures/0.jpg");
+            $("#pop-p").text('ur mum, painted with my dick, 6x9');
+            $("#pop").css("visibility", "visible");
+            $("#pop").fadeIn();
+        });
+        $("#close").click(function(){
+           $("#pop").fadeOut();
+            setTimeout(function(){$("#pop").css("visibility", "hidden");}, 500)
+        });
+    });
+</script>
+<link rel ="stylesheet" href ="style.css">
+    <div class = "btn-group" style = "width:100%">
+        <div class = "other" id = "group">
+            <button id = "home">home</button>
+            <button id = "bbut">bio</button>
+            <button id = "abut" style = "color: dimgray" disabled>fine art</button>
+            <div class = "btn-group">
+                <button id = "a1">deward is gay</button>
+                <button id = "a2">aw fuck</button>
+                <button id = "a3">twenty question is gay</button>
+            </div>
+            <button id = "ebut">fashion</button>
+            <button id = "cbut">contact</button>
+        </div>
+    </div>
+    <div class="name">
+        Vincent Wang, 2020
+    </div>
+    <div id = "art" type = "contents">
+        <div class = "gallery">
+            <button id = "0"><img src = "Pictures/0.jpg" style = "width: 200px; height: auto;"> </button>
+            <button><img src = "Pictures/1.jpg" style = "width: 200px; height: auto;"> </button>
+        </div>
+    </div>
+    <div id = "pop" class = "shape" style = "visibility: hidden;">
+        <img id = "pop-im" src = "1">
+        <p id = "pop-p">1</p>
+        <button id = "close">×</button>
+    </div>
+</html>
