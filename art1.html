@@ -8,32 +8,41 @@
     $(document).ready(function(){
         $(".gallery").fadeOut();
         $("#pop").fadeOut();
+        $(".blur").hide();
         var part = partition(17);
         orgImages(part);
         setTimeout(function(){$(".gallery").fadeIn();}, 300);
         $("[type = 'imgL']").click(function(){
+            $(".blur").show();
+            $("body").css("overflow","hidden");
             var a = $(this).attr("id");
             var img = document.getElementById("i"+a);
             var r = img.width/img.height;
             if (r> 1.2){
                 $("#pop-p").text('ur mum, painted with my dick, 6x9');
+                $("#pop-p").css("top", "-150px");
                 $("#pop").css("visibility", "visible");
                 $("#pop-im").attr("src", "Pictures/" +a+ ".jpg" );
-                $("#pop-im").css("width", "700px");
+                $("#pop-im").css("width", "800px");
                 $("#pop-im").css("height", "auto");
+                 $("#pop-im").css("top", "130px");
                 $("#pop").fadeIn();   
             }
             else{
                 $("#pop-p").text('ur mum, painted with my dick, 6x9');
+                $("#pop-p").css("top", "-300px");
                 $("#pop").css("visibility", "visible");
                 $("#pop-im").attr("src", "Pictures/" +a+ ".jpg" );
                 $("#pop-im").css("height", "600px");
                 $("#pop-im").css("width", "auto");
+                $("#pop-im").css("top", "50px");
                 $("#pop").fadeIn();   
             }
         });   
         $("#close").click(function(){
-           $("#pop").fadeOut();
+            $("#pop").fadeOut();
+            $("body").css("overflow","auto");
+            $(".blur").hide();
             setTimeout(function(){$("#pop").css("visibility", "hidden");}, 500)
         });
     });
@@ -45,7 +54,7 @@
             <button id = "bbut">bio</button>
             <button id = "abut" style = "color: dimgray" disabled>fine art</button>
             <div class = "btn-group" "style = z-index: -10;">
-                <button id = "a1">drawings</button>
+                <button id = "a1" style = "color: dimgray" disabled>drawings</button>
                 <button id = "a2">paintings</button>
                 <button id = "a3">sculpture</button>
             </div>
@@ -76,6 +85,8 @@
             <button type = "imgL" id = "15"><img id = "i15" src = "Pictures\15.jpg"></button>
             <button type = "imgL" id = "16"><img id = "i16" src = "Pictures\16.jpg"></button>
         </div>
+    </div>
+    <div class = "blur">
     </div>
     <div id = "pop" class = "shape" style = "visibility: hidden;">
         <img id = "pop-im" src = "1">

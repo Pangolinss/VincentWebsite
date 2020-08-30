@@ -165,7 +165,7 @@ $(document).ready(function(){
     });
     $("#abut").click(function(){
         $("[type = contents]").fadeOut();
-        setTimeout(function(){location.href = "art.html";}, 500);
+        setTimeout(function(){location.href = "art1.html";}, 500);
         $("#abut").css("color", "dimgray");
         animateDown(["#cbut", "#ebut"], 2);
     });
