@@ -21,12 +21,12 @@ function animateUp(arrStr, num){
     }
 }
 
-function partition(max){
+function partition(max, order){
     var i = 0;
     var j = 0;
     var part = [];
     for (i = 0; i< max ; i++){//partitions the images into groups
-        var image = document.getElementById("i"+i.toString(10));
+        var image = document.getElementById("i"+order[i].toString(10));
         var r = image.naturalWidth/image.naturalHeight;
         //Definitioins: r < 0.8 is normal,  0.8<=r<=1.2 is square, r > 1,2 is long
         if (j < 3 && r<0.9){
@@ -101,7 +101,7 @@ function scaleGroup(num, ids, offset, len){
     }
 }
 
-function orgImages(part){
+function orgImages(part, order){
     var i = 0;
     var j = 0;
     var len = 0;
@@ -110,14 +110,14 @@ function orgImages(part){
                     j = 0;
                     for (j = 0; j<3; j++){
                         if (j == 0){
-                            var image = document.getElementById("i"+j.toString(10));
+                            var image = document.getElementById("i"+order[j].toString(10));
                             image.width = image.naturalWidth * 0.12;
                             image.height = image.naturalHeight * 0.12;
                             len += image.width;
                         }  
                         else {
-                            var img = document.getElementById("i"+j.toString(10));
-                            var prev = document.getElementById("i"+(j-1).toString(10));
+                            var img = document.getElementById("i"+order[j].toString(10));
+                            var prev = document.getElementById("i"+order[j-1].toString(10));
                             img.height = prev.height;
                             img.width = img.naturalWidth * (img.height/img.naturalHeight);
                             len += img.width;
@@ -126,17 +126,17 @@ function orgImages(part){
                     j -= 1;
                 }
                 else if (part[i] == 1){
-                    var image = document.getElementById("i"+j.toString(10));
+                    var image = document.getElementById("i"+order[j].toString(10));
                     image.width = len+8;
                     image.height = image.naturalHeight * (image.width/image.naturalWidth);
                 }
                 else if (part[i] == 2){
-                    var ids = ["i"+j.toString(10) , "i"+(j+1).toString(10)];
+                    var ids = ["i"+order[j].toString(10) , "i"+order[j+1].toString(10)];
                     scaleGroup(2, ids, 4, len);
                     j++;
                 }
                 else if (part[i] == 3){
-                    var ids = ["i"+j.toString(10), "i"+(j+1).toString(10), "i"+(j+2).toString(10)]
+                    var ids = ["i"+order[j].toString(10), "i"+order[j+1].toString(10), "i"+order[j+2].toString(10)]
                     scaleGroup(3,ids, 1, len);
                     j += 2;
                 }
@@ -172,5 +172,17 @@ $(document).ready(function(){
     $("#tbut").click(function(){
         $("[type = contents]").fadeOut();
         setTimeout(function(){location.href = "index.html";}, 500);
+    });
+    $("#a1").click(function(){
+        $("[type = contents]").fadeOut();
+        setTimeout(function(){location.href = "art1.html";}, 500);
+    });
+    $("#a2").click(function(){
+        $("[type = contents]").fadeOut();
+        setTimeout(function(){location.href = "art2.html";}, 500);
+    });
+    $("#a3").click(function(){
+        $("[type = contents]").fadeOut();
+        setTimeout(function(){location.href = "art3.html";}, 500);
     });
 });

@@ -6,11 +6,12 @@
 <script src = "script.js"></script>
 <script>
     $(document).ready(function(){
+        var order = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
         $(".gallery").fadeOut();
         $("#pop").fadeOut();
         $(".blur").hide();
-        var part = partition(17);
-        orgImages(part);
+        var part = partition(17, order);
+        orgImages(part, order);
         setTimeout(function(){$(".gallery").fadeIn();}, 300);
         $("[type = 'imgL']").click(function(){
             $(".blur").show();
@@ -54,9 +55,10 @@
             <button id = "bbut">bio</button>
             <button id = "abut" style = "color: dimgray" disabled>fine art</button>
             <div class = "btn-group" "style = z-index: -10;">
-                <button id = "a1" style = "color: dimgray" disabled>drawings</button>
-                <button id = "a2">paintings</button>
-                <button id = "a3">sculpture</button>
+                <button id = "a1" style = "color: dimgray" disabled>all works</button>
+                <button id = "a2">drawings</button>
+                <button id = "a3">paintings</button>
+                <button id = "a4">sculpture</button>
             </div>
             <button id = "ebut">fashion</button>
             <button id = "cbut">contact</button>

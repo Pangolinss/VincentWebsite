@@ -134,7 +134,7 @@ div.name {
     top: 10%;
     margin-left: 31%;
     margin-right 69%;
-    max-width: 900px;
+    max-width: 910px;
 }
 
 .gallery button {
@@ -196,6 +196,6 @@ div.name {
     height: 100%;
     width: 100%;
     background-color: gray;
-    filter: opacity(0.5);
-    filter:blur(0.5);
+    filter:blur(1px);
+    filter: opacity(0.2);
 }
