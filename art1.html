@@ -26,7 +26,7 @@
                 $("#pop-im").attr("src", "Pictures/" +a+ ".jpg" );
                 $("#pop-im").css("width", "800px");
                 $("#pop-im").css("height", "auto");
-                 $("#pop-im").css("top", "130px");
+                $("#pop-im").css("top", "130px");
                 $("#pop").fadeIn();   
             }
             else{
@@ -45,6 +45,10 @@
             $("body").css("overflow","auto");
             $(".blur").hide();
             setTimeout(function(){$("#pop").css("visibility", "hidden");}, 500)
+        });
+        $("#fullscreen").click(function(){openFullscreen(this)                            
+            $("#pop-im").css("height", "100%");
+            $("#pop-im").css("width", "auto");
         });
     });
 </script>
@@ -91,7 +95,9 @@
     <div class = "blur">
     </div>
     <div id = "pop" class = "shape" style = "visibility: hidden;">
-        <img id = "pop-im" src = "1">
+        <div class = "full">
+            <button id = "fullscreen"> <img id = "pop-im" src = "1"> </button>
+        </div>
         <p id = "pop-p">1</p>
         <button id = "close">×</button>
     </div>

@@ -76,6 +76,7 @@ function partition(max, order){
     return part;
 }
 
+
 function scaleGroup(num, ids, offset, len){
     var image = [];
     var i = 0;
@@ -142,6 +143,19 @@ function orgImages(part, order){
                 }
                 j++;
             }
+}
+
+function openFullscreen(elem) {
+
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.mozRequestFullScreen) { 
+    elem.mozRequestFullScreen();
+  } else if (elem.webkitRequestFullscreen) { 
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { 
+    elem.msRequestFullscreen();
+  }
 }
 
 $(document).ready(function(){

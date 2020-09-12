@@ -177,10 +177,19 @@ div.name {
     top: 50px;
     left: 70px;
 }
+
+.shape > .full > button {
+    position: relative;
+    height: 600px;
+    width: auto;
+    top: 50px;
+    left: 70px;
+}
+
 .shape > button {
-    position: fixed;
-    right: 10%;
-    top: 9%;
+    position: absolute;
+    right: 1%;
+    top: 1%;
     color: dimgray;
     font-size: 50px;
 }
