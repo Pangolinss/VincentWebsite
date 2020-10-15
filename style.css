@@ -1,11 +1,14 @@
 @font-face{
     font-family: f;
-    src:url(GeosansLight.ttf);
+    src:url(BookAntiqua.ttf);
 }
 *{
     font-family: f;
     color: ghostwhite;
+    outline: none;
+    background-color: transparent;
 }
+
 html{
     background-color: black;
 }
@@ -15,7 +18,7 @@ html{
     background-color: transparent;
     margin-left: 40%;
     margin-right: 40%;
-    top: 140px;
+    top: 100px;
 }
 button {
     border: none;
@@ -33,9 +36,9 @@ button.move{
 button.title{
     position: absolute;
     color:white;
-    top: 150px;
-    left: 12.5%;
-    font-size: 70px;
+    top: 165px;
+    left: 5%;
+    font-size: 50px;
     outline: none;
     z-index: 1000;
 }
@@ -45,23 +48,29 @@ button.title{
     position:relative;
     color:white;
     top: 230px;
-    left:14%;
+    left:5%;
     display:float;
     background-color: transparent;
-    padding: 10px;
+    padding: 5px;
     cursor: pointer;
     display:block;
     outline:none;
     font-size: 20px;
 }
 
+.other button{
+    top: 210px;
+}
+
 #group > .btn-group{
     max-width:90%;
     position: relative;
-    left: 3%;
+    z-index: -100;
+    left: 2%;
+    top: -7px;
 }
 
-#group > .btn-group button{
+#group> .btn-group button{
     padding: 5px;
     font-size: 16px;
 }
@@ -78,14 +87,22 @@ div.name {
 }
 
 .text-block {
-    position: absolute;
+    position: relative;
     color: ghostwhite;
     font-size: 20px;
-    top: 230px;
-    right: 200px;
-    margin-right:90px;
-    margin-left: 900px;
+    top: 17%;
+    left: 20%;
+    margin-right: 60%;
     
+}
+.text-block img {
+    position: relative;
+    top: -200px;
+    right: -800px;
+    width:40%;
+    height:40%;
+    min-width: 300px;
+    min-heigh: 300px;
 }
 .title img{
     position:absolute;
@@ -109,4 +126,85 @@ div.name {
     top: -200px;
     left: -50px;
     display: block;
+}
+
+.gallery{
+    position: absolute;
+    left: -100px;
+    top: 10%;
+    margin-left: 31%;
+    margin-right 69%;
+    max-width: 910px;
+}
+
+.gallery button {
+    padding: 0;
+}
+
+.gallery button:hover{
+    filter: opacity(30%);
+}
+
+.popup {
+    visibility: hidden;
+}
+.shape {
+    position:fixed;
+    top: 10%;
+    right:0;
+    left: 0;
+    height: 80%;
+    width: 80%;
+    min-height: 700px;
+    min-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #eeeeee;
+    max-width: 100%;
+    max-height: 100%;
+}
+.shape > p {
+    position: relative;
+    color: #30313f;
+    font-size: 25px;
+    top: -300px;
+    margin-left: 70%;
+}
+.shape > img {
+    position: relative;
+    height: 600px;
+    width: auto;
+    top: 50px;
+    left: 70px;
+}
+
+.shape > .full > button {
+    position: relative;
+    height: 600px;
+    width: auto;
+    top: 50px;
+    left: 70px;
+}
+
+.shape > button {
+    position: absolute;
+    right: 1%;
+    top: 1%;
+    color: dimgray;
+    font-size: 50px;
+}
+
+.shape > button:hover{
+    color: #dddddd;
+}   
+
+.blur{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: gray;
+    filter:blur(1px);
+    filter: opacity(0.2);
 }

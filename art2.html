@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src = "script.js"></script>
+<script>
+    $(document).ready(function(){
+        var order = [1,4,5,3,10,11,15, 1,1,1];
+        $(".gallery").fadeOut();
+        $("#pop").fadeOut();
+        $(".blur").hide();
+        var part = partition(7, order);
+        orgImages(part, order);
+        setTimeout(function(){$(".gallery").fadeIn();}, 300);
+        $("[type = 'imgL']").click(function(){
+            $(".blur").show();
+            $("body").css("overflow","hidden");
+            var a = $(this).attr("id");
+            var img = document.getElementById("i"+a);
+            var r = img.width/img.height;
+            if (r> 1.2){
+                $("#pop-p").text('ur mum, painted with my dick, 6x9');
+                $("#pop-p").css("top", "-150px");
+                $("#pop").css("visibility", "visible");
+                $("#pop-im").attr("src", "Pictures/" +a+ ".jpg" );
+                $("#pop-im").css("width", "800px");
+                $("#pop-im").css("height", "auto");
+                 $("#pop-im").css("top", "130px");
+                $("#pop").fadeIn();   
+            }
+            else{
+                $("#pop-p").text('ur mum, painted with my dick, 6x9');
+                $("#pop-p").css("top", "-300px");
+                $("#pop").css("visibility", "visible");
+                $("#pop-im").attr("src", "Pictures/" +a+ ".jpg" );
+                $("#pop-im").css("height", "600px");
+                $("#pop-im").css("width", "auto");
+                $("#pop-im").css("top", "50px");
+                $("#pop").fadeIn();   
+            }
+        });   
+        $("#close").click(function(){
+            $("#pop").fadeOut();
+            $("body").css("overflow","auto");
+            $(".blur").hide();
+            setTimeout(function(){$("#pop").css("visibility", "hidden");}, 500)
+        });
+    });
+</script>
+<link rel ="stylesheet" href ="style.css">
+    <div class = "btn-group">
+        <div class = "other" id = "group">
+            <button id = "home">home</button>
+            <button id = "bbut">bio</button>
+            <button id = "abut" style = "color: dimgray" disabled>fine art</button>
+            <div class = "btn-group" "style = z-index: -10;">
+                <button id = "a1">all works</button>
+                <button id = "a2" style = "color: dimgray" disabled>drawings</button>
+                <button id = "a3">paintings</button>
+                <button id = "a4">sculpture</button>
+            </div>
+            <button id = "ebut">fashion</button>
+            <button id = "cbut">contact</button>
+        </div>
+    </div>
+    <div class="name">
+        Vincent Wang, 2020
+    </div>
+    <div id = "art" type = "contents" style = "visibility: hidden;">
+        <div class = "gallery">
+            <button type = "imgL" id = "1"><img id = "i1" src = "Pictures\1.jpg"></button>
+            <button type = "imgL" id = "4"><img id = "i4" src = "Pictures\4.jpg"></button>
+            <button type = "imgL" id = "5"><img id = "i5" src = "Pictures\5.jpg"></button>
+            <button type = "imgL" id = "3"><img id = "i3" src = "Pictures\3.jpg"></button>
+            <button type = "imgL" id = "10"><img id = "i10" src = "Pictures\10.jpg"></button>
+            <button type = "imgL" id = "11"><img id = "i11" src = "Pictures\11.jpg"></button>
+            <button type = "imgL" id = "15"><img id = "i15" src = "Pictures\15.jpg"></button>
+        </div>
+    </div>
+    <div class = "blur">
+    </div>
+    <div id = "pop" class = "shape" style = "visibility: hidden;">
+        <img id = "pop-im" src = "1">
+        <p id = "pop-p">1</p>
+        <button id = "close">×</button>
+    </div>
+</html>
